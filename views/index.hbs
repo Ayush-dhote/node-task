@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="display: flex;justify-content:center">User Tasks</h1>
+<hr>
+<div id="main" style="margin:auto;width: 80vw; display:flex;justify-content:space-around">
+    <div>
+        <h2 style="display: flex;justify-content:center ;margin-left:-40px">Users</h2>
+        <ol>
+          {{#each user}}
+            <li style=" width:20vw;height:40px;margin-bottom: 10px;font-size:20px">{{this.name}} - {{this.email}} - {{this.mobile}}</li>
+          {{/each}}
+        </ol>
+    </div>
+    <div style="border-left:2px rgb(40, 30, 30)">
+        <h2 style="display: flex;justify-content:center">Tasks</h2>
+        <ul>
+          {{#each task}}
+            <li style=" width:20vw;height:40px;margin-bottom: 10px;font-size:20px">{{this.taskName}} ({{this.taskType}}) - User ID: {{this.userId}}</li>
+          {{/each}}
+        </ul>
+    </div>  
+</div>
+    <div style="display:flex;justify-content:space-evenly;margin-top:40px;">
+        <button style="width: 150px;height:40px;border:none;background-color:rgb(216, 147, 10);"><a href="/create-users" style="text-decoration:none;color:white;font-size:19px">Create user</a></button>
+        <button style="width: 150px;height:40px;border:none;background-color:rgb(49, 97, 255);"><a href="/create-tasks" style="text-decoration:none;color:white;font-size:19px">Create task</a></button>
+        <button style="width: 170px;height:40px;border:none;background-color:rgb(5, 78, 59);"><a href="/export-excel" style="text-decoration:none;color:white;font-size:19px">Convert to Excel</a></button>
+    </div>
+</body>
+</html>
